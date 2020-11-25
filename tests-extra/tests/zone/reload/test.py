@@ -28,7 +28,7 @@ def reload_zone(version, exp_serial, exp_version):
     else:
         master.ctl(random.choice(["-f", " "]) + " zone-reload " + zone[0].name, wait=True)
 
-    new_serial = master.zone_wait(zone)
+    new_serial = master.zone_wait(zone, serial=exp_serial, equal=True)
     if new_serial != exp_serial:
         set_err("SOA MISMATCH")
         detail_log("!Zone '%s' SOA serial %s != %s" % (zone[0].name, new_serial, exp_serial))
