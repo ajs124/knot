@@ -83,8 +83,8 @@ Actions
   Trigger a zone reload from a disk without checking its modification time. For
   slave zone, the refresh from a master server is scheduled; for master zone,
   the notification of slave servers is scheduled. An open zone transaction
-  will be aborted! If invoked with the forced flag, also zone modules will be
-  re-loaded. (#)
+  will be aborted! If invoked with the **--force** flag, also zone modules will be
+  re-loaded, but **--blocking** might not work. (#)
 
 **zone-refresh** [*zone*...]
   Trigger a check for the zone serial on the zone's master. If the master has a
